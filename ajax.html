@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text"></p>
+    
+
+    <script>
+
+
+        xhl =  new XMLHttpRequest();
+        xhl.open('GET',"https://jsonplaceholder.typicode.com/posts")
+
+       xhl.onload = function(){
+
+           if(this.status == 200){
+               
+               
+            //    console.log("response of server",this.responseText)
+        //    for (i = 0; i < this.responseText.length; i++) {
+        //     //  console.log(this.responseText[i]);
+        //     text += this.responseText[i] + " ";               
+        //    }
+            }
+            document.getElementById("text").innerHTML = this.responseText;
+
+       }
+       
+
+       xhl.send()
+    </script>
+
+</body>
+</html>
